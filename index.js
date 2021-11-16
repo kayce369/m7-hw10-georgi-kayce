@@ -5,14 +5,20 @@ var clear = document.querySelector('#clear')
 var textarea = document.querySelector('textarea')
 
 // Retrieve name and note content from cookies and localstorage
+nameCookie = document.cookie
 // Then apply them to elements on the page
+if (nameCookie) {
+  nameSpan.textContent = nameCookie.split('=')[1]
+}
 // YOUR CODE HERE
 
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
+  document.cookie = 'username=' + nameSpan.textContent
   // save textarea's content to localstorage
+  
   // YOUR CODE HERE
 
   // triggers thumbs up animation
